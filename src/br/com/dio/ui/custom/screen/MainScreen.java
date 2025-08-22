@@ -1,13 +1,17 @@
 package br.com.dio.ui.custom.screen;
 
+import br.com.dio.model.Space;
 import br.com.dio.service.BoardService;
 import br.com.dio.ui.custom.button.FinishGameButton;
 import br.com.dio.ui.custom.button.ResetButton;
 import br.com.dio.ui.custom.frame.MainFrame;
+import br.com.dio.ui.custom.input.NumberText;
 import br.com.dio.ui.custom.panel.MainPanel;
+import br.com.dio.ui.custom.panel.SudokuSector;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Map;
 
 import static br.com.dio.model.GameStatusEnum.*;
@@ -30,11 +34,22 @@ public class MainScreen {
     public void buildMainScreeen(){
         JPanel mainPanel = new MainPanel(dimension);
         JFrame mainFrame = new MainFrame(dimension, mainPanel);
-        addResetButton(mainPanel)
-        addCheckGameStatusButton(mainPanel)
-        addFinishGameButton(mainPanel)
+        for (int r = 0; r < 9; r+=3) {
+            var endRow = r + 2;
+            for (int c = 0; c < 9; c+=3) {
+                var endCol = c + 2;
+                mainPanel.add()
+            }
+        }
+        addResetButton(mainPanel);
+        addCheckGameStatusButton(mainPanel);
+        addFinishGameButton(mainPanel);
         mainFrame.revalidate();
         mainFrame.repaint();
+    }
+    private JPanel generateSection(final List<Space> spaces){
+        List<NumberText> fields = new ArrayList<>(spaces.stream().map(NumberText :: new).toList());
+        return new SudokuSector(fields);
     }
 
     private void addFinishGameButton(JPanel mainPanel) {
@@ -44,15 +59,13 @@ public class MainScreen {
             }
 
         });
-
-
     }
 
     private void addCheckGameStatusButton(JPanel mainPanel) {
         JButton checkGameStatusButton = new FinishGameButton(e ->{
-            boolean hasErros:boolean = boardService.hasErrors();
-            var gameStatus:gameStatusEnum = boardService.getStatus();
-            var message:String = switch (gameStatus){
+            boolean hasErros = boardService.hasErrors();
+            var gameStatus= boardService.getStatus();
+            var message= switch (gameStatus){
 
                 case NON_STARTED -> " O jogo não foi iniciado";
                 case INCOMPLETE -> " O jogo está incompleto";

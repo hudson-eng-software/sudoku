@@ -44,3 +44,47 @@ Clone o repositório:
 ```bash
 git clone https://github.com/seu-usuario/sudoku.git
 cd sudoku
+```
+Compile o projeto:
+```bash
+javac Sudoku.java
+```
+Execute passando os argumentos:
+```bash
+java Sudoku "0,0;4,false 1,0;7,false 2,0;9,true 3,0;5,false ..."
+```
+
+---
+
+<h2>🌿Branches do Projeto</h2>
+
+main → Sudoku no terminal
+
+ui → Sudoku com interface gráfica
+
+---
+
+<h2>🎨Template Figma</h2>
+
+👉 Link para o template no Figma
+
+---
+<h2> 🧩Diagramas</h2>
+
+👉 Link para o diagrama no Draw.io
+
+---
+
+<h2>🚀Melhorias Futuras</h2>
+
+✅ Interface gráfica interativa
+
+✅ Validação automática dos números
+
+🔲 Salvamento de jogo em banco de dados
+
+🔲 Geração automática de novos tabuleiros
+
+---
+
+✍️ Desenvolvido por Hudson Amorim

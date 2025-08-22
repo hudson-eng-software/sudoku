@@ -66,12 +66,14 @@ ui → Sudoku com interface gráfica
 
 <h2>🎨Template Figma</h2>
 
-👉 Link para o template no Figma
+👉 [Link para o template no Figma](https://maze-upload-14927549.figma.site/)
 
 ---
 <h2> 🧩Diagramas</h2>
 
-👉 Link para o diagrama no Draw.io
+<img width="479" height="410" alt="image" src="https://github.com/user-attachments/assets/bd5934d6-b988-4b85-922f-2e6573849cde" />
+
+
 
 ---
 
